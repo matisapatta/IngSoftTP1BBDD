@@ -18,10 +18,10 @@ namespace IngSoftTP3BD
             this.permisos = new List<int>();
         }
 
-        public RolCompuesto(List<Rol> rol)
+        public RolCompuesto(List<Rol> rol, int id)
         {
             this.hijos = rol;
-            this.idRol = 0;
+            this.idRol = id;
             this.permisos = new List<int>();
         }
 
@@ -43,7 +43,7 @@ namespace IngSoftTP3BD
             {
                 Rol aux = hijo;
                 List<int> auxArray;
-                if (aux.getIdRol() != 0)
+                if (aux.getIdRol() > 0 && aux.getIdRol()<=10)
                 {
                     this.permisos.Add(aux.getIdRol());
                 }
